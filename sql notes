@@ -1,0 +1,36 @@
+create database RGM;
+create database HeroVired;
+create table RGM(
+name varchar(40) primary key not null,
+college varchar(20) not null,
+session varchar(20) not null,
+contactnumber int not null,
+address varchar(100) not null
+);
+select * from RGM;
+insert into RGM(name,college,session,contactnumber,address)
+values ("Mahesh","RGMCET","Sql",9666536,"Govindapalli");
+insert into RGM(name,college,session,contactnumber,address)
+values ("Suresh","GPRCET","Python",970324,"Kurnool");
+insert into RGM(name,college,session,contactnumber,address)
+values ("Ramu","SVR","C++",9666536,"Nandyal");
+select * from RGM;
+select * from RGM where college = "RGMCET";
+select * from RGM where session="Sql";
+select * from RGM where name = "Ramu" and college = "SVR";
+select * from RGM where name like "M%";
+select * from RGM where college like "RG%";
+select * from RGM where name not like "M%";
+select * from RGM where college like "_u%";
+select * from RGM where college like "_G%";
+select * from RGM where college like "R%";
+INSERT INTO RGM VALUES ("jayaram","KSRM","JAV",78898,"KURNOOL");
+INSERT INTO RGM VALUES ("abhi","Korm","PHP",9834455,"dhone");
+INSERT INTO RGM VALUES ("lochan","SRM","MYSQL",9847589,"emmiganur");
+INSERT INTO RGM VALUES ("manu","RAMAKRISHNA","c++",79877989,"allagada");
+INSERT INTO RGM VALUES ("maddy","KSss","j++",66767,"vijayawada");
+select name  from RGM where college ="SRM";
+select name,address  from RGM where college ="SRM";
+select * from RGM where address in ("emmiganur","allagada");
+select * from RGM where college ="SRM" or college = "KSss";
+
