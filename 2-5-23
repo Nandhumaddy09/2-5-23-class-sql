@@ -110,5 +110,122 @@ SELECT NAME FROM MANAGER1 ORDER BY RAND() LIMIT 2;
 
 
 
+show databases;
+
+select * from rgm;
+
+update rgm set name='ravi' where college='Korm';-- updating the table column u can apply update only on the exixting data in table.
+
+update rgm set session ='angular' where name='maddy';
+
+create table test (name varchar(30),
+college varchar(30),
+session varchar(30),
+contactnumber int,
+address varchar(30)
+);
+
+select *from test;
+insert into test select * from rgm;-- which means insert into inserts all values of table rgm into newly created table 'test'.
+
+update test set session='react' where college="KSRM";
+
+-- inorder to insert makesure that  ur old table and 
+ -- new table are in the same database.if u want to insert into 
+-- new table which is in one database and old table is in another data base then use this query.
+-- INSERT INTO test select * from herovired.rgm;
+
+truncate table test;-- it will data in table
+
+delete from rgm where name='maddy';-- delete a row from table.
+drop table test;
+
+select * from rgm;
+
+alter table rgm rename column contactnumber to phone;-- in order to change the column name u can use this querry.
+
+alter table rgm rename to rgm_student;-- change table name
+
+select * from rgm_student;
+
+update rgm_student set favourite_dish ="chicken" where session ='jav';-- add values to column
+
+select * from rgm_student;
+
+alter table  rgm_student modify phone varchar(30);
+
+alter table rgm_student rename column favourite to favourite_dish;-- change cloumn name.
+
+create database suns;-- creates database
+
+show databases;-- shows databases
+
+drop database suns; -- delete database
+
+alter table rgm_student add column favourite varchar(30);-- when u want add a column in table
+
+alter table rgm_student modify column phone varchar(40);--  when u want change data type and size.
+
+alter table rgm_student drop column favourite_dish;-- when u want to delete/drop a column
+select * from rgm_student;
+alter table rgm_student drop column favourite;
+alter table rgm_student drop column name,drop column phone; -- when u want to delete multiple columns from a table.
+
+select * from student;
+select min(student_marks) from student;-- to find min 
+select max(student_marks) from student;-- to find max
+select sum(student_marks) from student;-- add all marks in the marks column.
+select sum(student_marks) as total from student;-- to change sum to total column NAME.
+select count(student_marks) from student;-- counts numbers of marks rows in table
+ create database EXCERSIE;
+create table customer(ID int primary key not null,
+ name varchar(30),city varchar(30),grade int,slaes_id int);
+ 
+ insert into customer values(671,'madhu','bhopal',5,12345),(122,'lochan','chennai',4,2345),
+ (123,'ravi','manglore',4,2334),(124,'mahesh','nandyal',4,2335),(145,'abhi','banglore',3,24345),
+ (142,'jaya','chennur',4,2785),(888,'kiran','mumbai',4,29995),(678,'ramu','lucknow',4,566655);
+ 
+ select * from customer;
+ 
+ -- write a sql query to find out the details of the customer whose grade are above 3.
+ SELECT * FROM CUSTOMER WHERE GRADE >4;
+  -- write sql query to find details of customer whose grade are graeter than or equal to 3
+  select * from customer where grade >=3;
+  
+    select * from customer where grade >=3 order by grade;
+select * from customer where id>125 order by id;
+select * from customer where grade>=3 and city ='chenai';
+select * from customer where grade>=4 and city ='hyderabad';
+select * from customer where city='nandyal' and grade>=2;
+ select * from customer;
+ select * from customer where grade>=3 and city ='nandyal';
+  select name from customer where grade>=3 and city ='nandyal';
+   select * from customer where grade>=7 or city ='nandyal';
+   
+-- write query to find customer details who are either from chennai city or who dont above grade more than 7
+   select * from customer where grade>=7 or not city ='chennai';
+    select * from customer where grade>=7 or not city ='chennai';
+    
+    CREATE TABLE SALESMAN(ID INT PRIMARY KEY,NAME VARCHAR(20),CITY VARCHAR(20),COMMISSION FLOAT);
+INSERT INTO SALESMAN VALUES
+(200,"PRASANNA","KURNOOL",0.45),
+(201,"KEERTHI","NANDYAL",0.23),
+(202,"KAVYA","HYDERABAD",0.32),
+(203,"KEERTHANA","BANGALORE",0.43);
+SELECT * FROM SALESMAN;
+SELECT * FROM SALESMAN WHERE COMMISSION BETWEEN 0.23 AND 0.43;
+SELECT * FROM SALESMAN WHERE NAME LIKE "K%";
+alter table salesman add column address varchar(40);
+ update salesman set address='pak' where id=200;
+  update salesman set address='ndk' where id=202;
+   update salesman set address='knl' where id=203;
+    update salesman set address='ndl' where id=201;
+select * from salesman order by address desc;
+select * from salesman order by id asc;
+
+select city as town from salesman;
+
+
+
 
 
